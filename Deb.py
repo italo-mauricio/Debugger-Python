@@ -161,12 +161,24 @@ test_maior(maior_funcional)
 def palindro_test(func):
     if (func('tacocat')
         and func('acocatt')
-        and func('tacodog')):
+        and not func('tacodog')):
         mostre_acerto(func.__name__)
     else:
         mostra_erro(func.__name__)
 
 def palindro_loop(letters):
+    '''
+        Since a palindrome permutation is basically just a rotated
+        palindrome, we can simply check if any rotation is a palindrome
+
+        if any rotation of the string is a palindrome, then the string must be
+        a palindrome permutation
+    
+    
+    
+    
+    
+    '''
     def rotate(s):
         return s[1:] + s[0]
 
@@ -176,7 +188,7 @@ def palindro_loop(letters):
                 return False
             else:
                 s = s[1:-1]
-        return 
+        return True
     
     temp_str = str(letters)
     for _ in letters:
@@ -185,5 +197,8 @@ def palindro_loop(letters):
         temp_str = rotate(temp_str)
 
     return False
+
+
+palindro_test(palindro_loop)
 
 
