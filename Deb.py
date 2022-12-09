@@ -97,6 +97,8 @@ def maior_simple(numlist):
 test_maior(maior_simple)
 
 
+
+
 def maior_recursi(numlist):
 
     '''
@@ -147,4 +149,41 @@ def maior_funcional(numlist):
     '''
     return reduce(lambda x, y: x if x > y else y, numlist)
 
-maior_tes
+test_maior(maior_funcional)
+
+
+'''
+    exercise 3: check if a string a palindrome permutation
+    ex: "tacocat", "acocatt", and "cattaco" would all be true
+
+'''
+
+def palindro_test(func):
+    if (func('tacocat')
+        and func('acocatt')
+        and func('tacodog')):
+        mostre_acerto(func.__name__)
+    else:
+        mostra_erro(func.__name__)
+
+def palindro_loop(letters):
+    def rotate(s):
+        return s[1:] + s[0]
+
+    def palindro(s):
+        while len(s) > 1:
+            if s[0] != s[-1]:
+                return False
+            else:
+                s = s[1:-1]
+        return 
+    
+    temp_str = str(letters)
+    for _ in letters:
+        if palindro(temp_str):
+            return True
+        temp_str = rotate(temp_str)
+
+    return False
+
+
