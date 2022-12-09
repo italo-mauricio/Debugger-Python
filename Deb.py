@@ -12,8 +12,17 @@ def multi_test(func):
 
 def multi_recursi(num1, num2):
     if num2 == 1:
-        return num1
+        return num1 
     else:
         return num1 + multi_recursi(num1, num2 -1)
 
 multi_test(multi_recursi)
+
+
+def multi_loop(num1, num2):
+    sum = 0
+    for i in range(num2):
+        sum += num1
+    return sum
+
+multi_test(multi_loop)
