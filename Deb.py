@@ -1,3 +1,6 @@
+from math import log, pow, exp
+
+
 def mostre_acerto(name_test):
     print(f"{name_test}:\t Passou ✅")
 def mostra_erro(name_test):
@@ -26,3 +29,9 @@ def multi_loop(num1, num2):
     return sum
 
 multi_test(multi_loop)
+
+
+def multi_exp(num1, num2):
+    return log(pow(exp(num1), num2))
+
+multi_test(multi_exp)
