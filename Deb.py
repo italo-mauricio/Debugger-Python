@@ -1,4 +1,5 @@
 from math import log, pow, exp
+from functools import reduce
 
 '''
     Debugando pequenos programas no python
@@ -125,3 +126,25 @@ def maior_recursi(numlist):
 
     
 test_maior(maior_recursi)
+
+
+def maior_funcional(numlist):
+    '''
+        this is a neat trick
+
+    reduce() is a technique from functional programming where a function that takes
+    two arguments is applied to the first two items in a list, then apllied again 
+    to the result of the first call and the next item in the list, and so on and so forth
+
+    In the words:
+    mylist = [1,2,3,4,5,6]
+    result = mylist[0]
+    result = f(result, mylist[1])
+    result = f(result, mylist[2])
+
+    result = f(result, mylist[n])
+    
+    '''
+    return reduce(lambda x, y: x if x > y else y, numlist)
+
+maior_tes
