@@ -1,12 +1,7 @@
 from math import log, pow, exp
 
 '''
-    Today i'm going to be taking some common programming exercises and coming
-    up with as many solutions as i can
-
-    I've already polished and debugged the code here so don't feel bad if you don't
-    write code like this. 
-
+    Debugando pequenos programas no python
 
 '''
 def mostre_acerto(name_test):
@@ -16,8 +11,9 @@ def mostra_erro(name_test):
 
 def multi_test(func):
     '''
-        this is a test function to make sure our
-        solutions are correct. Always a good habit to have.
+       
+        esta é uma função de teste para garantir que nosso
+        soluções estão corretas. Sempre um bom hábito de se ter.
     
     '''
     if func(5, 6) == 5*6:
@@ -28,9 +24,9 @@ def multi_test(func):
 def multi_recursi(num1, num2):
 
     '''
-        this works by adding num1 together onde for each
-        recursive call, and then ensuring the number of recursive calls
-        we wake is equal to num 2 
+        isso funciona adicionando num1 juntos onde para cada
+        chamada recursiva e, em seguida, garantindo o número de chamadas recursivas
+        nós acordamos é igual a num 
     
     
     '''
@@ -101,6 +97,20 @@ test_maior(maior_simple)
 
 
 def maior_recursi(numlist):
+
+    '''
+        esta solução recursiva é um pouco complicada
+
+        o caso base é quando há apenas 2 números na lista, então simplesmente retornamos o maior.
+
+        para casos recursivos, retiramos o número mais à esquerda da lista e fazemos uma chamada recursiva com o resto da lista
+
+
+        então comparamos o número mais à esquerda com o resultado da chamada recursiva e
+        em seguida, retorne o maior.
+    
+    
+    '''
     if len(numlist) == 2:
         if numlist[0] < numlist[1]:
             return numlist[1]
@@ -114,3 +124,4 @@ def maior_recursi(numlist):
         return leftmost 
 
     
+test_maior(maior_recursi)
