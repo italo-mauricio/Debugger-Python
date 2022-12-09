@@ -92,3 +92,25 @@ def maior_loop(numlist):
     return maior
 
 test_maior(maior_loop)
+
+
+def maior_simple(numlist):
+    return max(numlist)
+
+test_maior(maior_simple)
+
+
+def maior_recursi(numlist):
+    if len(numlist) == 2:
+        if numlist[0] < numlist[1]:
+            return numlist[1]
+        else:
+            return numlist[0]
+    leftmost = numlist[0]
+    largest_on_right = maior_recursi(numlist[1:])
+    if largest_on_right > leftmost:
+        return largest_on_right
+    else:
+        return leftmost 
+
+    
