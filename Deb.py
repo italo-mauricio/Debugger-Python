@@ -73,7 +73,7 @@ multi_test(multi_exp)
 
 # exercicio 2, encontre o maior número em uma lista
 
-def maior_num(func):
+def test_maior(func):
     if func ([8, 6, 7, 5, 309]) == 309:
         mostre_acerto(func.__name__)
     else:
@@ -90,3 +90,5 @@ def maior_loop(numlist):
         if maior < num:
             maior = num
     return maior
+
+test_maior(maior_loop)
