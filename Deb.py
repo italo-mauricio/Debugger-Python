@@ -236,3 +236,36 @@ def test_unique(func):
         mostre_acerto(func.__name__)
     else:
         mostra_erro(func.__name__)
+
+
+def unique_char(chars):
+    return len(chars) == len(set(chars))
+
+test_unique(unique_char)
+
+def is_unique_sort(chars):
+    prev = ''
+    for char in sorted(list(chars)):
+        if char == prev:
+            return False
+        prev = char
+    return True
+
+test_unique(is_unique_sort)
+
+def is_unique_count(chars):
+    for char in chars:
+        if chars.count(char) > 1:
+            return False
+    return True
+
+test_unique(is_unique_count)
+
+def is_unique_alpha(chars):
+    alpha = list(set('thequickbrownfoxjumpsoverthelazydog'))
+    alpha_size = len(alpha)
+    alpha = [c for c in alpha if c not in chars]
+    result = (alpha_size - len(chars)) == len(alpha)
+    return result
+
+test_unique (is_unique_alpha)
