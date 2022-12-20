@@ -1,4 +1,4 @@
-from math import log, pow, exp
+from math import log, pow, exp, ceil
 from functools import reduce
 
 '''
@@ -203,12 +203,16 @@ def palindro_loop(letters):
 
 palindro_test(palindro_loop)
 
-from math import ceil
+
 
 def palindro_stack(letters):
     '''
-        if string,
-    
+        if string, such as 'acoatt', is a palindrome permutation then it's double,
+        'acocattacoacatt', will contain the original unrotated palindrome.
+
+        So we can iterate over 'accocattacocatt' while keeping track of the few letters
+        in a stack. If we find that the next few letters are the same as what we have in
+        the stack, then 'acocatt' is a palindrome.
     
     '''
     stack_size = ceil(len(letters)/2)
@@ -220,3 +224,15 @@ def palindro_stack(letters):
         if stack == repeat[idx: (idx + stack_size)]:
             return True
         return False
+
+palindro_test(palindro_stack)
+
+
+# exercicse 4: Determine if all the characteres in a string are unique
+
+
+def test_unique(func):
+    if func('asdf') and not func('asdfa'):
+        mostre_acerto(func.__name__)
+    else:
+        mostra_erro(func.__name__)
