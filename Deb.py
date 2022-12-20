@@ -223,7 +223,7 @@ def palindro_stack(letters):
         stack = stack[-stack_size:]
         if stack == repeat[idx: (idx + stack_size)]:
             return True
-        return False
+    return False
 
 palindro_test(palindro_stack)
 
