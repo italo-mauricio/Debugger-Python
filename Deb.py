@@ -5,6 +5,8 @@ from functools import reduce
     Debugando pequenos programas no python
 
 '''
+
+
 def mostre_acerto(name_test):
     print(f"{name_test}:\t Passou ✅")
 def mostra_erro(name_test):
@@ -201,4 +203,20 @@ def palindro_loop(letters):
 
 palindro_test(palindro_loop)
 
+from math import ceil
 
+def palindro_stack(letters):
+    '''
+        if string,
+    
+    
+    '''
+    stack_size = ceil(len(letters)/2)
+    stack = ''
+    repeat = letters + letters
+    for idx, l in enumerate(letters + letters):
+        stack = l + stack
+        stack = stack[-stack_size:]
+        if stack == repeat[idx: (idx + stack_size)]:
+            return True
+        return False
